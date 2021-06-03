@@ -1,9 +1,10 @@
 import cv2
 import numpy as np
 
+#importing haar casacade 
 face_classifier = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-
+#function to detect face 
 def face_extractor(img):
     faces = face_classifier.detectMultiScale(img, scaleFactor = 1.1, minNeighbors=4)
 
@@ -17,7 +18,7 @@ def face_extractor(img):
 
     return cropped_face
 
-
+#function to capture video
 cap = cv2.VideoCapture(0)
 count = 0
 
